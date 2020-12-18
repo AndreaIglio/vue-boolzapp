@@ -1,4 +1,8 @@
 // Codice viene eseguito solo quando documento e' carico
-$(function () {
- 
-});
+let app = new Vue ({
+
+    el:'#root',
+    data : {},
+    methods : {},
+
+})

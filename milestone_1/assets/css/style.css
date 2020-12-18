@@ -6,6 +6,10 @@
  sans-serif;
 }
 
+h4 {
+  margin: 0;
+}
+
 /* utility */
 
 .flex {
@@ -69,13 +73,28 @@
 }
 
 .sender {
-  background-color: red;
   width: 50%;
+  align-items: center;
+
+}
+
+.sender_name {
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
 }
 
 .sender_icons {
   width: 50%;
-  background-color: blue;
+  background-color:;
+  justify-content: flex-end;
+  align-items: center;
+  color: #C0C0C0;
+  font-size: 30px;
+}
+
+.sender_icons > i {
+  padding: 0 12px;
 }
 
 
@@ -180,15 +199,25 @@ border-radius: 10px;
   justify-content: space-around;
 }
 
+
 .receiver {
-  background-color: red;
   width: 50%;
+  align-items: center;
+}
+
+.receiver_details {
+  margin-left: 10px;
 }
 
 .receiver_icons {
   width: 50%;
-  background-color: blue;
+  justify-content: flex-end;
+  align-items: center;
+  color: #C0C0C0;
+  font-size: 30px;
 }
+.receiver_icons > i{
+padding: 0 12px;}
 
 /* /top-r */
 
@@ -222,7 +251,7 @@ border-radius: 10px;
   width: 5%;
   height: 100%;
   font-size: 35px;
-  color: gray;
+  color: #919191;
 }
 
 .input_message {
@@ -232,16 +261,17 @@ border-radius: 10px;
 .input_message > input {
   width: 95%;
   padding: 0px 10px;
-  height: 100%;
+  height: 90%;
   border: none;
   border-radius: 8px;
+  font-size: 16px;
 }
 
 .speaker {
   width: 5%;
   height: 100%;
   font-size: 35px;
-  color: gray;
+  color: #919191;
 }
 
 

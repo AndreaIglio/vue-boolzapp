@@ -46,18 +46,23 @@
 
 <body>
 
-  <div class="wrapper flex column">
+  <div class="wrapper flex column" >
     <div class="green_line">
     </div>
-    <div class="container flex">
+    <div class="container flex" id="root">
       <div class="left flex column">
         <div class="navbar sender_navbar flex padding_10_25">
 
           <div class="sender flex">
-            
+              <div class="avatar flex">asds</div>
+          <div class="sender_name flex column">
+            <h4>Andrea</h4>
+          </div>
           </div>
           <div class="sender_icons flex">
-
+            <i class="fas fa-circle-notch"></i>
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-ellipsis-v"></i>
           </div>
 
         </div>
@@ -79,7 +84,7 @@
               <i class="fas fa-search"></i>
             </div>
             <input type="text" placeholder="Cerca o inizia una nuova chat" onfocus="this.placeholder = ''"
-              ">
+              >
           </div>
         </div>
         <div class="contacts flex">
@@ -88,8 +93,22 @@
       </div>
       <div class="right flex column">
         <div class="navbar receiver_navbar flex padding_10_25">
-          <div class="receiver flex"></div>
-          <div class="receiver_icons flex"></div>
+          <div class="receiver flex">
+            <div class="receiver_avatar flex">asda</div>
+            <div class="receiver_details flex column">
+              <div class="receiver_name flex">
+                <h4>Michele</h4>
+              </div>
+              <div class="receiver_lastaccess flex">
+                <span>Ultimo accesso oggi alle</span>
+              </div>
+            </div>
+          </div>
+          <div class="receiver_icons flex">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
         </div>
         <div class="message_field flex">
          
@@ -100,7 +119,7 @@
             <i class="far fa-smile"></i>
           </div>
           <div class="input_message flex">
-            <input type="text" placeholder="Scrivi un messaggio" onfocus="this.placeholder = ''" ">
+            <input type="text" placeholder="Scrivi un messaggio" onfocus="this.placeholder = ''" >
           </div>
           <div class="speaker flex">
             <i class="fas fa-microphone"></i>
