@@ -6,21 +6,74 @@
 
 /* utility */
 
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+
 /* /utility */
 
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color:#D7DBD6;
+}
 
-/* header */
+.green_line {
+  width: 100vw;
+  height: 100px;
+  background-color:#009688;
 
-/* /header */
+}
 
-
+.container {
+  width: 80%;
+  background-color: yellowgreen;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  height: 80%;
+  padding: 0;
+}
 
 /* main */
+.left {
+  width: 30%;
+  background-color: orange;
+}
+
+.right {
+  width: 70%;
+  background-color: blueviolet;
+}
+
 
 /* /main */
 
+/* navbar */
 
+.navbar {
+  height: 70px;
+  background-color: lightgray;
+  width: 100%;
+  margin: 0;
+}
+
+/* /navbar */
+
+.message_field {
+  height: calc(100% - 140px);
+  background-color: yellow;
+}
 
 /* footer */
+
+.right_footer {
+  height: 70px;
+  width: 100%;
+  background-color: lightcyan;
+}
 
 /* /footer */
