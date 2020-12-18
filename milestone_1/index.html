@@ -54,7 +54,9 @@
         <div class="navbar sender_navbar flex padding_10_25">
 
           <div class="sender flex">
-              <div class="avatar flex">asds</div>
+              <div class="avatar flex">
+                <img src="assets/img/avatar/avatar_io.jpg" style="width: 70px;" alt="">
+              </div>
           <div class="sender_name flex column">
             <h4>Andrea</h4>
           </div>
@@ -87,17 +89,34 @@
               >
           </div>
         </div>
-        <div class="contacts flex">
-
+        <div class="contacts flex column">
+          
+          <div v-for="item in contacts">
+            <img v-bind:src="item.avatar" alt="">
+              <h4>{{item.name}}</h4>
+          </div>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
       <div class="right flex column">
         <div class="navbar receiver_navbar flex padding_10_25">
           <div class="receiver flex">
-            <div class="receiver_avatar flex">asda</div>
+            <div class="receiver_avatar flex">
+              <img src="" alt="">
+            </div>
             <div class="receiver_details flex column">
               <div class="receiver_name flex">
-                <h4>Michele</h4>
+                <h4 v-for="item in contacts">{{item.name}}</h4>
               </div>
               <div class="receiver_lastaccess flex">
                 <span>Ultimo accesso oggi alle</span>

@@ -75,6 +75,7 @@ h4 {
 .sender {
   width: 50%;
   align-items: center;
+  justify-content: center;
 
 }
 
@@ -82,6 +83,7 @@ h4 {
   justify-content: center;
   align-items: center;
   margin-left: 10px;
+  width: 50%;
 }
 
 .sender_icons {
@@ -97,7 +99,9 @@ h4 {
   padding: 0 12px;
 }
 
-
+.avatar img {
+  border-radius: 50%;
+}
 
 
 /* /top-l */
@@ -179,6 +183,21 @@ border-radius: 10px;
 
 /* bottom-l */
 
+.contacts > div {
+  display: flex;
+  /* width: 100%; */
+  /* height: 100%; */
+  padding: 10px 25px;
+}
+
+.contacts h4 {
+  margin-left: 10px;
+}
+
+.contacts img{
+  border-radius: 50%;
+  width: 70px;
+}
 
 /* /bottom-l */
 
@@ -225,7 +244,7 @@ padding: 0 12px;}
 /* middle-r */
 .message_field {
   height: calc(100% - 170px);
-  background-image: url('../../assets/img/cover/cover.jpg');
+  background-image: url('../img/cover/cover.jpg');
   background-size: cover;
   overflow-y: scroll;
 }
