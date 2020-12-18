@@ -38,20 +38,6 @@
   padding: 0;
 }
 
-/* main */
-.left {
-  width: 30%;
-  background-color: orange;
-}
-
-.right {
-  width: 70%;
-  background-color: blueviolet;
-}
-
-
-/* /main */
-
 /* navbar */
 
 .navbar {
@@ -63,17 +49,63 @@
 
 /* /navbar */
 
+
+/* LEFT */
+.left {
+  width: 30%;
+  background-color: orange;
+}
+
+/* top-l */
+/* /top-l */
+
+
+/* middle-l */
+
+/* /middle-l */
+
+
+/* bottom-l */
+
+
+/* /bottom-l */
+
+
+
+
+/* /LEFT */
+
+/* RIGHT */
+
+.right {
+  width: 70%;
+  background-color: blueviolet;
+}
+
+/* top-r */
+/* /top-r */
+
+
+/* middle-r */
 .message_field {
   height: calc(100% - 140px);
   background-color: yellow;
+  overflow-y: scroll;
 }
 
-/* footer */
+/* /middle-r */
 
-.right_footer {
+
+/* bottom-r */
+
+.right_bottom {
   height: 70px;
   width: 100%;
   background-color: lightcyan;
 }
 
-/* /footer */
+/* /bottom-r */
+
+
+
+/* /RIGHT */
