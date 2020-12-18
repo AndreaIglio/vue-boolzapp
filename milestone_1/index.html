@@ -35,8 +35,9 @@
 
 
   <!-- google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
     rel="stylesheet">
   <!-- /google font -->
 
@@ -49,22 +50,61 @@
     <div class="green_line">
     </div>
     <div class="container flex">
-      <div class="left flex">
-        <div class="navbar sender_navbar">
+      <div class="left flex column">
+        <div class="navbar sender_navbar flex padding_10_25">
+
+          <div class="sender flex">
+            
+          </div>
+          <div class="sender_icons flex">
+
+          </div>
+
         </div>
 
-        <div class="notifications flex">
+        <div class="notifications flex padding_10_25">
+
+          <div class="notifications_alarm flex">
+            <i class="fa fa-bell-slash"></i>
+            <div class="flex notifications_text column">
+              <h4>Ricevi notifiche di nuovi messaggi</h4>
+              <a href="">Attiva notifiche desktop</a>
+            </div>
+          </div>
+          
+        </div>
+        <div class="search_chat flex padding_10_25">
+          <div class="search_input flex">
+            <div class="search_icon flex">
+              <i class="fas fa-search"></i>
+            </div>
+            <input type="text" placeholder="Cerca o inizia una nuova chat" onfocus="this.placeholder = ''"
+              ">
+          </div>
+        </div>
+        <div class="contacts flex">
 
         </div>
-
       </div>
       <div class="right flex column">
-        <div class="navbar receiver_navbar">
+        <div class="navbar receiver_navbar flex padding_10_25">
+          <div class="receiver flex"></div>
+          <div class="receiver_icons flex"></div>
         </div>
         <div class="message_field flex">
          
         </div>
-        <div class="right_bottom flex">
+        <div class="right_bottom flex padding_10_25">
+
+          <div class="emoji flex">
+            <i class="far fa-smile"></i>
+          </div>
+          <div class="input_message flex">
+            <input type="text" placeholder="Scrivi un messaggio" onfocus="this.placeholder = ''" ">
+          </div>
+          <div class="speaker flex">
+            <i class="fas fa-microphone"></i>
+          </div>
 
         </div>
       </div>
