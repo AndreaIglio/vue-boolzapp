@@ -2,6 +2,8 @@
 let app = new Vue({
   el: "#root",
   data: {
+    mess_sender: 'mess_sender',
+    mess_receiver: 'mess_receiver',
     contacts: [
       {
         name: "Michele",
@@ -88,5 +90,6 @@ let app = new Vue({
       },
     ],
   },
-  methods: {},
+  methods: {
+  },
 });

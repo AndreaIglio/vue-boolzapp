@@ -199,6 +199,11 @@ border-radius: 10px;
   width: 70px;
 }
 
+.contacts > div:hover {
+  opacity: 0.7;
+  cursor:pointer;
+}
+
 /* /bottom-l */
 
 
@@ -241,16 +246,56 @@ padding: 0 12px;}
 /* /top-r */
 
 
+
+
+
+
+
+
 /* middle-r */
 .message_field {
   height: calc(100% - 170px);
   background-image: url('../img/cover/cover.jpg');
   background-size: cover;
   overflow-y: scroll;
+  padding: 50px 100px;
 }
 
 
+
+
+
+.mess_sender {
+  align-self: flex-end;
+  background-color: lightgreen;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.mess_receiver {
+  align-self: flex-start;
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: 10px 20px;
+
+}
+
+
+
+
 /* /middle-r */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* bottom-r */
