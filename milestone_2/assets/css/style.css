@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+ font-family: 'Lato',
+ sans-serif;
+}
+
+h4 {
+  margin: 0;
+}
+
+/* utility */
+
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+
+.padding_10_25 {
+  padding: 10px 25px;
+}
+
+/* /utility */
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color:#D7DBD6;
+}
+
+.green_line {
+  width: 100vw;
+  height: 100px;
+  background-color:#009688;
+
+}
+
+.container {
+  width: 80%;
+  background-color: yellowgreen;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  height: 90%;
+  padding: 0;
+}
+
+/* navbar */
+
+.navbar {
+  height: 80px;
+  background-color: #EDEDED;
+  width: 100%;
+  margin: 0;
+}
+
+/* /navbar */
+
+
+/* LEFT */
+.left {
+  width: 30%;
+  background-color: white;
+}
+
+/* top-l */
+
+.sender_navbar {
+  justify-content: space-around;
+}
+
+.sender {
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.sender_name {
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  width: 50%;
+}
+
+.sender_icons {
+  width: 50%;
+  background-color:;
+  justify-content: flex-end;
+  align-items: center;
+  color: #C0C0C0;
+  font-size: 30px;
+}
+
+.sender_icons > i {
+  padding: 0 12px;
+}
+
+.avatar img {
+  border-radius: 50%;
+}
+
+
+/* /top-l */
+
+
+/* middle-l */
+
+.notifications {
+  height: 90px;
+  width: 100%;
+  background-color:#8EDAFC;
+  justify-content:center;
+  align-items: center;
+}
+
+
+.notifications_alarm {
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.notifications_alarm > i {
+  border-radius: 50%;
+  padding: 15px;
+  border: 1px solid white;
+  background-color: white;
+  font-size: 20px;
+  color:#8EDAFC;
+  margin: 0 10px;
+}
+
+
+.search_chat{
+width: 100%;
+height: 50px;
+background-color: #F6F6F6;
+border: 1px solid white;
+border-radius: 10px;
+}
+
+.search_input {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+ 
+
+}
+
+.search_icon {
+  height: 100%;
+  width: 15%;
+  background-color: white;
+  justify-content: center;
+  font-size: 18px;
+  align-items: center;
+  color: lightgray;
+  
+}
+
+.search_input > input {
+  width: 85%;
+  height: 100%;
+  padding: 0 10px;
+  border: none;
+}
+
+.contacts {
+
+  width: 100%;
+  height: calc(100% - 220px);
+  overflow-y: scroll;
+}
+
+/* /middle-l */
+
+
+/* bottom-l */
+
+.contacts > div {
+  display: flex;
+  /* width: 100%; */
+  /* height: 100%; */
+  padding: 10px 25px;
+}
+
+.contacts h4 {
+  margin-left: 10px;
+}
+
+.contacts img{
+  border-radius: 50%;
+  width: 70px;
+}
+
+.contacts > div:hover {
+  opacity: 0.7;
+  cursor:pointer;
+}
+
+/* /bottom-l */
+
+
+
+
+/* /LEFT */
+
+/* RIGHT */
+
+.right {
+  width: 70%;
+}
+
+/* top-r */
+
+.receiver_navbar {
+  justify-content: space-around;
+}
+
+
+.receiver {
+  width: 50%;
+  align-items: center;
+}
+
+.receiver_details {
+  margin-left: 10px;
+}
+
+.receiver_icons {
+  width: 50%;
+  justify-content: flex-end;
+  align-items: center;
+  color: #C0C0C0;
+  font-size: 30px;
+}
+.receiver_icons > i{
+padding: 0 12px;}
+
+/* /top-r */
+
+
+
+
+
+
+
+
+/* middle-r */
+.message_field {
+  height: calc(100% - 170px);
+  background-image: url('../img/cover/cover.jpg');
+  background-size: cover;
+  overflow-y: scroll;
+  padding: 50px 100px;
+}
+
+
+
+
+
+.mess_sender {
+  align-self: flex-end;
+  background-color: lightgreen;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.mess_receiver {
+  align-self: flex-start;
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: 10px 20px;
+
+}
+
+
+
+
+/* /middle-r */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* bottom-r */
+
+.right_bottom {
+  height: 90px;
+  width: 100%;
+  background-color:#EDEDED;
+}
+
+.right_bottom > div {
+  justify-content: center;
+  align-items: center;
+}
+
+.emoji{
+  width: 5%;
+  height: 100%;
+  font-size: 35px;
+  color: #919191;
+}
+
+.input_message {
+  width: 90%;
+  height: 100%;
+}
+.input_message > input {
+  width: 95%;
+  padding: 0px 10px;
+  height: 90%;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.speaker {
+  width: 5%;
+  height: 100%;
+  font-size: 35px;
+  color: #919191;
+}
+
+
+/* /bottom-r */
+
+
+
+/* /RIGHT */
