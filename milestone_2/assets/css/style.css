@@ -10,6 +10,10 @@ h4 {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
 /* utility */
 
 .flex {
@@ -270,6 +274,8 @@ padding: 0 12px;}
   background-color: lightgreen;
   border-radius: 5px;
   padding: 10px 20px;
+  margin: 10px 0px;
+
 }
 
 .mess_receiver {
@@ -277,6 +283,7 @@ padding: 0 12px;}
   background-color: lightgrey;
   border-radius: 5px;
   padding: 10px 20px;
+  margin: 10px 0px;
 
 }
 
@@ -284,13 +291,6 @@ padding: 0 12px;}
 
 
 /* /middle-r */
-
-
-
-
-
-
-
 
 
 

@@ -108,7 +108,8 @@
         <div class="navbar receiver_navbar flex padding_10_25">
           <div class="receiver flex">
             <div class="receiver_avatar flex">
-              <img src="" alt="">
+              <img :src="contacts[index].avatar" style="width: 65px; border-radius: 50%;" v-for="(user,index) in contacts"
+                v-if="contacts[index].visible == true">
             </div>
             <div class="receiver_details flex column">
               <div class="receiver_name flex">
@@ -130,7 +131,16 @@
         </div>
         <div class="message_field flex column">
 
-        <!-- <div v-bind:class='mess_sender' v-for="message in contacts" @click='m()'>{{message.messages}}</div> -->
+        <div class="flex column" v-for="(user,index) in contacts" v-if="contacts[index].visible == true">
+        <div v-bind:class='mess_sender' v-for="element in contacts[index].messages" v-if="element.status == 'sent'">
+          {{element.text}}
+          <p>{{element.date}}</p>
+        </div>
+        <div v-bind:class="mess_receiver" class="column flex" v-for="element in contacts[index].messages"
+          v-if="element.status == 'received'">{{element.text}}
+          <p>{{element.date}}</p>
+        </div>
+        </div>
           
          
         </div>
