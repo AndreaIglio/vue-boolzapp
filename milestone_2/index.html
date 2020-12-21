@@ -132,12 +132,8 @@
         <div class="message_field flex column">
 
         <div class="flex column" v-for="(user,index) in contacts" v-if="contacts[index].visible == true">
-        <div v-bind:class='mess_sender' v-for="element in contacts[index].messages" v-if="element.status == 'sent'">
-          {{element.text}}
-          <p>{{element.date}}</p>
-        </div>
-        <div v-bind:class="mess_receiver" v-for="element in contacts[index].messages"
-          v-if="element.status == 'received'">{{element.text}}
+        <div v-bind:class="element.status == 'received' ? 'mess_receiver' : 'mess_sender' "
+          v-for="element in contacts[index].messages">{{element.text}}
           <p>{{element.date}}</p>
         </div>
         </div>
