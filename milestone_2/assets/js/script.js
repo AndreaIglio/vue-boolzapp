@@ -2,6 +2,7 @@
 let app = new Vue({
   el: "#root",
   data: {
+    newMessHasSucceed: false,
     initValue: '',
     column: 'column',
     mess_sender: 'mess_sender',
@@ -120,47 +121,32 @@ let app = new Vue({
 
 
     addMessage: function (index){
-
-      console.log(this.initValue);
+      
+      // console.log(this.initValue);
 
          let newMess = {
            date: new Date(),
            text: this.initValue,
            status: 'sent',
          };
-         console.log(newMess);
-
          if(newMess.text.length > 0){
-         this.contacts[index].messages.push(newMess);}
-          this.initValue='';
-
-
-
-
-         setTimeout(answerReceiver,1000)
-
-         function answerReceiver(){
-          
-          alert('ok');
+         this.contacts[index].messages.push(newMess);
+         setTimeout(
+           function () {
+             let okMess = {
+               date: new Date(),
+               text: "Ok",
+               status: "received",
+             };
+             this.contacts[index].messages.push(okMess);
+           }.bind(this),
+           1000
+         );
         
-         }
-    //      function answerReceiver(index){
-
-    //       let okMess = {
-    //         date: new Date(),
-    //         text: 'Ok',
-    //         status: 'received',
-    //       }
-
-    //        this.contacts[index].messages.push(okMess);
-
-    // }
-
-    }
-
-
+      }
    
-
+         this.initValue='';
+    },
 
 
   },
