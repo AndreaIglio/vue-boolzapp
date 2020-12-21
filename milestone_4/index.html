@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <!-- /bootstrap -->
+
+
+  <!-- css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- /css -->
+
+
+  <!-- /mediaquery -->
+  <link rel="stylesheet" href="assets/mediaquery/mediaquery.css">
+  <!-- /mediaquery -->
+
+
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- /JQuery -->
+
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <!-- /fontawesome -->
+
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- /google font -->
+
+  <title>Boolzapp</title>
+</head>
+
+<body>
+
+  <div class="wrapper flex column" >
+    <div class="green_line">
+    </div>
+    <div class="container flex" id="root">
+      <div class="left flex column">
+        <div class="navbar sender_navbar flex padding_10_25">
+
+          <div class="sender flex">
+              <div class="avatar flex">
+                <img src="assets/img/avatar/avatar_io.jpg" style="width: 70px;" alt="">
+              </div>
+          <div class="sender_name flex column">
+            <h4>Mariottide</h4>
+          </div>
+          </div>
+          <div class="sender_icons flex">
+            <i class="fas fa-circle-notch"></i>
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+
+        </div>
+
+        <div class="notifications flex padding_10_25">
+
+          <div class="notifications_alarm flex">
+            <i class="fa fa-bell-slash"></i>
+            <div class="flex notifications_text column">
+              <h4>Ricevi notifiche di nuovi messaggi</h4>
+              <a href="">Attiva notifiche desktop</a>
+            </div>
+          </div>
+          
+        </div>
+        <div class="search_chat flex padding_10_25">
+          <div class="search_input flex">
+            <div class="search_icon flex">
+              <i class="fas fa-search"></i>
+            </div>
+            <input type="text" placeholder="Cerca o inizia una nuova chat" onfocus="this.placeholder = ''"
+              
+            v-model="searchInitValue"
+           
+            >
+          </div>
+        </div>
+        <div class="contacts flex column">
+          
+          <div v-for="(item,index) in contacts" @click='userActive(item,index)' v-if="item.g==true">
+            <img v-bind:src="item.avatar" alt="">
+              <h4>{{item.name}}</h4>
+              
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="right flex column">
+        <div class="navbar receiver_navbar flex padding_10_25">
+          <div class="receiver flex">
+            <div class="receiver_avatar flex">
+              <img :src="user.avatar" style="width: 65px; border-radius: 50%;" v-for="user in contacts"
+                v-if="user.visible == true">
+            </div>
+            <div class="receiver_details flex column">
+              <div class="receiver_name flex">
+               <h4 v-for="(user,index) in contacts" v-if="contacts[index].visible == true">
+                 {{user.name}}</h4>
+
+
+              </div>
+              <div class="receiver_lastaccess flex">
+                <span>Ultimo accesso oggi alle</span>
+              </div>
+            </div>
+          </div>
+          <div class="receiver_icons flex">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+        <div class="message_field flex column">
+
+        <div class="flex column" v-for="(user,index) in contacts" v-if="contacts[index].visible == true">
+        <div v-bind:class='mess_sender' v-for="element in contacts[index].messages" v-if="element.status == 'sent'">
+          {{element.text}}
+          <p>{{element.date}}</p>
+        </div>
+        <div v-bind:class="mess_receiver" v-for="element in contacts[index].messages"
+          v-if="element.status == 'received'">{{element.text}}
+          <p>{{element.date}}</p>
+        </div>
+        </div>
+          
+         
+        </div>
+        <div class="right_bottom flex padding_10_25">
+
+          <div class="emoji flex">
+            <i class="far fa-smile"></i>
+          </div>
+          <div class="input_message flex">
+            <input type="text" placeholder="Scrivi un messaggio" onfocus="this.placeholder = ''" 
+            v-for="(user,index) in contacts" v-if="contacts[index].visible == true"
+            v-model="initValue"
+            v-on:keyup.enter="addMessage(index)"
+
+            >
+          </div>
+          <div class="speaker flex">
+            <i class="fas fa-microphone"></i>
+          </div>
+
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+
+
+
+  <!--  Vue Js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <!-- /Vue Js -->
+
+  <!-- JS script -->
+  <script type="text/javascript" src="assets/js/script.js">
+  </script>
+  <!-- /JS script -->
+
+</body>
+
+</html>
