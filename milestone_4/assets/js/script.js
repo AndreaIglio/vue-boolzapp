@@ -2,6 +2,7 @@
 let app = new Vue({
   el: "#root",
   data: {
+    z: [],
     findName: [],
     nowTime: "",
     initValue: "",
@@ -13,7 +14,7 @@ let app = new Vue({
       {
         name: "Michele",
         avatar: "assets/img/avatar/avatar_1.jpg",
-        visible: false,
+        visible: true,
         g: true,
         messages: [
           {
@@ -100,6 +101,16 @@ let app = new Vue({
     ],
   },
   methods: {
+    lastAccess: function () {
+      this.contacts.forEach((element) => {
+        let messaggiLista = element.messages;
+        console.log(messaggiLista);
+        let i = messaggiLista[messaggiLista.length - 1].date;
+        console.log(i);
+        
+      });
+    },
+
     time: function () {
       let timeNow = new Date().toLocaleTimeString();
       let dateNow = new Date().toLocaleDateString();
@@ -146,7 +157,7 @@ let app = new Vue({
     },
   },
 
-  beforeUpdate: function() {
+  beforeUpdate: function () {
     this.contacts.forEach((element) => {
       console.log(element.name);
       let userNames = element.name.toLowerCase();
@@ -158,4 +169,6 @@ let app = new Vue({
       }
     });
   },
+
+  
 });

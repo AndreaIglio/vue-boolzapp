@@ -116,13 +116,14 @@
             </div>
             <div class="receiver_details flex column">
               <div class="receiver_name flex">
-               <h4 v-for="(user,index) in contacts" v-if="contacts[index].visible == true">
+               <h4 v-for="(user,index) in contacts" v-if="contacts[index].visible == true" @click="lastAccess()">
                  {{user.name}}</h4>
 
 
               </div>
               <div class="receiver_lastaccess flex">
-                <span>Ultimo accesso oggi alle</span>
+                <span v-for="(user,index) in contacts" v-if="contacts[index].visible == true" @click="lastAccess()">Ultimo accesso oggi
+                  alle {{lastAccess()}}</span>
               </div>
             </div>
           </div>
@@ -135,17 +136,11 @@
         <div class="message_field flex column">
 
         <div class="flex column" v-for="(user,index) in contacts" v-if="contacts[index].visible == true">
-        <div v-bind:class='mess_sender' v-for="element in contacts[index].messages" v-if="element.status == 'sent'">
-          {{element.text}}
-          <p>{{element.date}}</p>
-        </div>
-        <div v-bind:class="mess_receiver" v-for="element in contacts[index].messages"
-          v-if="element.status == 'received'">{{element.text}}
+        <div v-bind:class="element.status == 'received' ? 'mess_receiver' : 'mess_sender' " v-for="element in contacts[index].messages">{{element.text}}
           <p>{{element.date}}</p>
         </div>
         </div>
           
-         
         </div>
         <div class="right_bottom flex padding_10_25">
 
