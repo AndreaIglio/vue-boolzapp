@@ -108,8 +108,8 @@
         <div class="navbar receiver_navbar flex padding_10_25">
           <div class="receiver flex">
             <div class="receiver_avatar flex">
-              <img :src="contacts[index].avatar" style="width: 65px; border-radius: 50%;" v-for="(user,index) in contacts"
-                v-if="contacts[index].visible == true">
+              <img :src="user.avatar" style="width: 65px; border-radius: 50%;" v-for="user in contacts"
+                v-if="user.visible == true">
             </div>
             <div class="receiver_details flex column">
               <div class="receiver_name flex">
@@ -136,7 +136,7 @@
           {{element.text}}
           <p>{{element.date}}</p>
         </div>
-        <div v-bind:class="mess_receiver" class="column flex" v-for="element in contacts[index].messages"
+        <div v-bind:class="mess_receiver" v-for="element in contacts[index].messages"
           v-if="element.status == 'received'">{{element.text}}
           <p>{{element.date}}</p>
         </div>
@@ -150,7 +150,12 @@
             <i class="far fa-smile"></i>
           </div>
           <div class="input_message flex">
-            <input type="text" placeholder="Scrivi un messaggio" onfocus="this.placeholder = ''" >
+            <input type="text" placeholder="Scrivi un messaggio" onfocus="this.placeholder = ''" 
+            v-for="(user,index) in contacts" v-if="contacts[index].visible == true"
+            v-model="initValue"
+            v-on:keyup.enter="addMessage(index)"
+
+            >
           </div>
           <div class="speaker flex">
             <i class="fas fa-microphone"></i>
