@@ -2,7 +2,7 @@
 let app = new Vue({
   el: "#root",
   data: {
-    newMessHasSucceed: false,
+    nowTime:'',
     initValue: '',
     column: 'column',
     mess_sender: 'mess_sender',
@@ -91,15 +91,21 @@ let app = new Vue({
           },
         ],
       },
+      
     ],
   },
   methods: {
 
-    
-    userActive: function (item,index){
 
-      // console.log(item,index);
-      // console.log(item.visible);
+
+    time: function(){
+      let timeNow = new Date().toLocaleTimeString();
+      let dateNow = new Date().toLocaleDateString();
+      return `${dateNow}  ${timeNow}`
+    },
+
+
+    userActive: function (item,index){
 
       this.contacts.forEach(element => {
         // console.log(element);
@@ -125,16 +131,16 @@ let app = new Vue({
       // console.log(this.initValue);
 
          let newMess = {
-           date: new Date(),
+           date: this.time(),
            text: this.initValue,
-           status: 'sent',
+           status: "sent",
          };
          if(newMess.text.length > 0){
          this.contacts[index].messages.push(newMess);
          setTimeout(
            function () {
              let okMess = {
-               date: new Date(),
+               date: this.time(),
                text: "Ok",
                status: "received",
              };
