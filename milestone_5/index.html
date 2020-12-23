@@ -94,13 +94,15 @@
         </div>
         <div class="contacts flex column">
           
-          <div class="flex" v-for="(item,index) in contacts" @click='userActive(item,index)' v-if="item.g==true">
+          <div class="flex " v-for="(item,index) in contacts" @click='userActive(item,index)' v-if="item.g==true">
             <div class="flex ">
             <img v-bind:src="item.avatar" alt="">
             
               <h4>{{item.name}}</h4>
               </div>
-              <span class="lastAccess flex">{{messTime[index]}}</span>
+              <span class="lastAccess flex">
+                {{contacts[index].messages[contacts[index].messages.length - 1].date}}
+              </span>
               
           </div>
         </div>
@@ -126,7 +128,14 @@
 
               </div>
               <div class="receiver_lastaccess flex">
-                <span v-for="(user,index) in contacts" v-if="contacts[index].visible == true">Ultimo accesso {{messTime[index]}}</span>
+                <span v-for="(user,index) in contacts" v-if="contacts[index].visible == true">Ultimo accesso
+                {{contacts[index].messages[contacts[index].messages.length - 1].date}}
+                
+                </span>
+                
+                </span>
+
+                
               </div>
             </div>
           </div>

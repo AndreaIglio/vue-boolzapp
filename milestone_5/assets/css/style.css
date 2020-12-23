@@ -26,6 +26,9 @@ p {
 .padding_10_25 {
   padding: 10px 25px;
 }
+.bg_lightgray {
+  background-color: #f5f5f5;
+}
 
 /* /utility */
 
@@ -37,7 +40,7 @@ p {
 
 .green_line {
   width: 100vw;
-  height: 100px;
+  height: 125px;
   background-color:#009688;
 
 }
@@ -92,7 +95,6 @@ p {
 
 .sender_icons {
   width: 50%;
-  background-color:;
   justify-content: flex-end;
   align-items: center;
   color: #C0C0C0;
@@ -208,8 +210,10 @@ border-radius: 10px;
 }
 
 .contacts > div:hover {
-  opacity: 0.7;
-  cursor:pointer;
+ background-color: #f5f5f5;
+ transition: all 0.6s;
+ 
+cursor:pointer;
 }
 
 /* /bottom-l */

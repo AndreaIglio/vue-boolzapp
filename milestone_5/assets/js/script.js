@@ -100,9 +100,13 @@ let app = new Vue({
       },
     ],
   },
+
+
   methods: {
     
-      
+  
+
+    
 
     time: function () {
       let timeNow = new Date().toLocaleTimeString();
@@ -111,6 +115,7 @@ let app = new Vue({
     },
 
     userActive: function (item, index) {
+      
       this.contacts.forEach((element) => {
         // console.log(element);
         element.visible = false;
@@ -152,10 +157,10 @@ let app = new Vue({
 
   beforeUpdate: function () {
     this.contacts.forEach((element) => {
-      console.log(element.name);
+      // console.log(element.name);
       let userNames = element.name.toLowerCase();
       if (userNames.search(this.searchInitValue) != -1) {
-        console.log(userNames.search(this.searchInitValue));
+        // console.log(userNames.search(this.searchInitValue));
         element.g = true;
       } else {
         element.g = false;
@@ -165,18 +170,6 @@ let app = new Vue({
     
   },
 
-  mounted: function () {
-        this.contacts.forEach((element) => {
-        let messaggiLista = element.messages;
-        // console.log(messaggiLista);
-        let i = messaggiLista[messaggiLista.length - 1].date;
-        // console.log(i);
-        this.messTime.push(i);
-        console.log(this.messTime);
-        
-      });
-    
-  }
-
+  
   
 });
