@@ -2,7 +2,7 @@
 let app = new Vue({
   el: "#root",
   data: {
-    z: [],
+    messTime: [],
     findName: [],
     nowTime: "",
     initValue: "",
@@ -101,15 +101,8 @@ let app = new Vue({
     ],
   },
   methods: {
-    lastAccess: function () {
-      this.contacts.forEach((element) => {
-        let messaggiLista = element.messages;
-        console.log(messaggiLista);
-        let i = messaggiLista[messaggiLista.length - 1].date;
-        console.log(i);
-        
-      });
-    },
+    
+      
 
     time: function () {
       let timeNow = new Date().toLocaleTimeString();
@@ -171,6 +164,19 @@ let app = new Vue({
     });
     
   },
+
+  mounted: function () {
+        this.contacts.forEach((element) => {
+        let messaggiLista = element.messages;
+        // console.log(messaggiLista);
+        let i = messaggiLista[messaggiLista.length - 1].date;
+        // console.log(i);
+        this.messTime.push(i);
+        console.log(this.messTime);
+        
+      });
+    
+  }
 
   
 });
